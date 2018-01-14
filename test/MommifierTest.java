@@ -14,16 +14,23 @@ public class MommifierTest {
     }
 
     @Test
-    public void shouldReturnMommyWhenInputIsVowel() {
-        Mommifier mommifier = new Mommifier();
-        String result = mommifier.mommy("abaa");
-        assertThat(result, is("mommybmommya"));
-    }
-
-    @Test
     public void shoudReturnTrueWhenInputIsVowel(){
         Mommifier mommifier = new Mommifier();
         boolean result = mommifier.isVowel("a");
         assertThat(result, is(true));
+    }
+
+    @Test
+    public void shouldReturnMommyWhenInputIsVowel() {
+        Mommifier mommifier = new Mommifier();
+        String result = mommifier.mommy("aba");
+        assertThat(result, is("mommybmommy"));
+    }
+
+    @Test
+    public void shouldReturnOneMommyWhenInputIsContinuousVowel(){
+        Mommifier mommifier=new Mommifier();
+        String result=mommifier.mommy("aabbeeecc");
+        assertThat(result,is("mommyabbmommyeecc"));
     }
 }
